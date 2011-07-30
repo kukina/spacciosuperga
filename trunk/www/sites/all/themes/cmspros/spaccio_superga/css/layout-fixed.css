@@ -1,0 +1,409 @@
+/**
+ * @file
+ * Layout Styling (DIV Positioning)
+ *
+ * Define CSS classes to create a table-free, 3-column, 2-column, or single
+ * column layout depending on whether blocks are enabled in the left or right
+ * columns.
+ *
+ * This layout is based on the Zen Columns layout method.
+ *   http://drupal.org/node/201428
+ *
+ * Only CSS that affects the layout (positioning) of major elements should be
+ * listed here.  Such as:
+ *   display, position, float, clear, width, height, min-width, min-height
+ *   margin, border, padding, overflow
+ */
+
+
+/*
+ * Body
+ */
+body {
+}
+
+.clearfix{
+	clear: both;
+}
+
+#page-wrapper,
+.region-bottom {
+  /*
+   * If you want to make the page a fixed width and centered in the viewport,
+   * this is the standards-compliant way to do that. See also the ie6.css file
+   * for the necessary IE5/IE6quirks hack to center a div.
+   */
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+#page {
+}
+
+h2.block-title,
+h1{
+	color: #F9A807;
+	font-size: 13px;
+}
+
+.node .content,
+.block .content{
+	Color: #666;
+	font-size: 10px;
+	font-weight: bold;
+	}
+
+/*
+ * Header
+ */
+#header {
+	background: none repeat scroll 0 0 #CC0000;
+	padding: 5px 10px 10px 10px;
+}
+
+#header .section {
+}
+
+.region-header {
+}
+
+/*
+ * Main (container for everything else)
+ */
+#main-wrapper {
+  position: relative;
+}
+
+#main {
+}
+
+/*
+ * Content
+ */
+#content,
+.no-sidebars #content {
+  float: left; /* LTR */
+  width: 960px;
+  margin-left: 0; /* LTR */
+  margin-right: -960px; /* LTR */ /* Negative value of #content's width + left margin. */
+  padding: 0; /* DO NOT CHANGE. Add padding or margin to #content .section. */
+}
+
+.sidebar-first #content {
+  width: 760px;
+  margin-left: 200px; /* LTR */ /* The width of .region-sidebar-first. */
+  margin-right: -960px; /* LTR */ /* Negative value of #content's width + left margin. */
+}
+
+.sidebar-second #content {
+  width: 760px;
+  margin-left: 0; /* LTR */
+  margin-right: -760px; /* LTR */ /* Negative value of #content's width + left margin. */
+}
+
+.two-sidebars #content {
+  width: 560px;
+  margin-left: 200px; /* LTR */ /* The width of .region-sidebar-first */
+  margin-right: -760px; /* LTR */ /* Negative value of #content's width + left margin. */
+}
+
+#content .section {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Navigation
+ */
+#navigation {
+  float: left; /* LTR */
+  width: 100%;
+  margin-left: 0; /* LTR */
+  margin-right: -100%; /* LTR */ /* Negative value of #navigation's width + left margin. */
+  padding: 0; /* DO NOT CHANGE. Add padding or margin to #navigation .section. */
+  height: 3em; /* The navigation can have any arbritrary height. We picked one
+                    that is the line-height plus 1em: 1.3 + 1 = 2.3
+                    Set this to the same value as the margin-top below. */
+}
+
+#navigation{
+	padding-bottom: 5px;
+}
+
+.with-navigation #content,
+.with-navigation .region-sidebar-first,
+.with-navigation .region-sidebar-second {
+  margin-top: 1em; /* Set this to the same value as the navigation height above. */
+}
+
+#navigation .section {
+	padding-top: 30px;
+	padding-left: 110px;
+}
+/* NAVIGATION STYLING*/
+
+#navigation #main-menu li a{
+	color: #fff;
+	text-decoration: none;
+	padding-top: 5px;
+	float: right;
+	}
+
+
+#navigation #main-menu li{
+ height: 50px;
+ font-size: 14px;
+}
+
+#navigation #main-menu li.menu-331{
+	background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_home.png) no-repeat;
+	padding-right: 50px;
+	padding-left: 30px;
+	padding-top: 5px;
+}
+#navigation #main-menu li.menu-331:hover
+{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_home_active.png) no-repeat;
+}
+
+#navigation #main-menu li.menu-332{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_dove.png) no-repeat;
+	padding-right: 60px;
+	padding-left: 30px;
+  padding-top: 5px;
+}
+#navigation #main-menu li.menu-332:hover
+{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_dove_active.png) no-repeat;
+}
+
+#navigation #main-menu li.menu-333{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_orario.png) no-repeat;
+	padding-right: 30px;
+  padding-left: 15px;
+  padding-top: 5px;
+}
+#navigation #main-menu li.menu-333:hover
+{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_orario_active.png) no-repeat;
+}
+
+#navigation #main-menu li.menu-323{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_contattateci.png) no-repeat;
+	padding-right: 50px;
+	padding-left: 30px;
+  padding-top: 5px;
+}
+#navigation #main-menu li.menu-323:hover
+{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_contattateci_active.png) no-repeat;
+}
+
+#navigation #main-menu li.menu-362{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_collezioni.png) no-repeat;
+	padding-right: 70px;
+	padding-left: 45px;
+  padding-top: 5px;
+
+}
+#navigation #main-menu li.menu-362:hover
+{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_collezioni_active.png) no-repeat;
+}
+
+#navigation #main-menu li.menu-335{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_news.png) no-repeat;
+  padding-right: 60px;
+	padding-left: 30px;
+  padding-top: 5px;
+}
+#navigation #main-menu li.menu-335:hover
+{
+  background: transparent url(/sites/all/themes/cmspros/spaccio_superga/images/menu_news_active.png) no-repeat;
+}
+
+
+/*
+ * First sidebar
+ */
+.region-sidebar-first {
+  float: left; /* LTR */
+  width: 200px;
+  margin-left: 0; /* LTR */
+  margin-right: -200px; /* LTR */ /* Negative value of .region-sidebar-first's width + left margin. */
+  padding: 0; /* DO NOT CHANGE. Add padding or margin to .region-sidebar-first .section. */
+}
+
+.region-sidebar-first .section {
+  margin: 0 20px 0 0; /* LTR */
+  padding: 0;
+}
+
+/*
+ * Second sidebar
+ */
+.region-sidebar-second {
+  float: left; /* LTR */
+  width: 200px;
+  margin-left: 760px; /* LTR */ /* Width of content + sidebar-first. */
+  margin-right: -960px; /* LTR */ /* Negative value of .region-sidebar-second's width + left margin. */
+  padding: 0; /* DO NOT CHANGE. Add padding or margin to .region-sidebar-second .section. */
+}
+
+.region-sidebar-second .section {
+  margin: 0 0 0 20px; /* LTR */
+  padding: 0;
+}
+
+/*
+ * Footer
+ */
+.region-footer {
+ background: none repeat scroll 0 0 #CC0000;
+ width: 100%;
+ height: 120px;
+}
+
+.region-footer .block,
+.region-footer .block .content p{
+	margin: 0px;
+	padding-top: 10px;
+}
+
+.region-footer .block{
+	float:right;
+  position:relative;
+  left:-50%;
+  text-align:left;
+}
+
+#block-block-1 table.gadget span.title a:hover,
+#block-block-1 table.gadget span.title a:visited,
+#block-block-1 Table.gadget span.title a:active,
+#block-block-1 Table.gadget span.title a,
+#block-block-1 Table.gadget span.powered a
+{
+	color: #666;
+}
+
+#content table td{
+	padding-right: 50px;
+}
+
+#content .views-field-title a{
+  color: #F9A807;
+	text-decoration: none;
+}
+
+#content .views-field-title a:hover{
+	text-decoration: underline;
+}
+
+/*
+ * Page bottom
+ */
+.region-bottom /* See also the #page-wrapper declaration above that this div shares. */ {
+	background: #CC0000;
+	width: 100%;
+}
+
+#block-block-3,
+#block-system-powered-by{
+	padding: 10px 10px 5px 10px;
+	margin-bottom: 0px;
+}
+
+#block-block-3 p,
+#block-system-powered-by{
+	font-size: 10px;
+	color: #fff;
+}
+
+#logo-wrapper
+{
+	background: #CC0000;
+	width: 100%;
+	display: block;
+}
+
+/*
+ * Prevent overflowing content
+ */
+#header,
+#content,
+#navigation,
+.region-sidebar-first,
+.region-sidebar-second,
+.region-footer,
+.region-bottom {
+  overflow: visible;
+  word-wrap: break-word; /* A very nice CSS3 property */
+}
+
+/*
+ * If a div.clearfix doesn't have any content after it and its bottom edge
+ * touches the bottom of the viewport, Firefox and Safari will mistakenly
+ * place several pixels worth of space between the bottom of the div and the
+ * bottom of the viewport. Uncomment this CSS property to fix this.
+ * Note: with some over-large content, this property might cause scrollbars
+ * to appear on the #page-wrapper div.
+ */
+/*
+#page-wrapper {
+  overflow-y: hidden;
+}
+*/
+
+#block-system-main{
+	margin-bottom: 0px;
+}
+
+#block-views-logo-view-block tbody .col-1{
+	padding-right: 70px;
+}
+
+#block-views-promozioni-view-block .views-field-field-promoz-prezzo
+{
+	color: #CC0000;
+}
+
+#block-block-6 p{
+	color: #CC0000;
+	text-transform: uppercase;
+	padding: 90px 5px 5px 5px;
+}
+
+#block-block-6{
+	 background: url(/sites/all/themes/cmspros/spaccio_superga/images/discount-background.png) no-repeat scroll left top transparent;
+}
+
+#block-views-featured-novita-block-1 .view-content{
+	padding-left: 25px;
+	padding-top: 25px;
+}
+
+.pager li a,
+.pager li a.active{
+	color: #666;
+}
+
+.item-list .pager{
+	text-align: left;
+}
+
+.more-link a{
+	color: #666;
+}
+
+.more-link{
+	text-align: left;
+}
+
+#block-block-3 p{
+	margin: 0px;
+}
+
+#block-views-logo-view-block{
+	margin-bottom: 0px;
+}
